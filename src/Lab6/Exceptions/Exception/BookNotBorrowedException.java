@@ -1,6 +1,6 @@
-﻿package Lab6.Exceptions.Exception;
+package Lab6.Exceptions.Exception;
 
-public class BookNotBorrowedException extends RuntimeException{
+public class BookNotBorrowedException extends Exception{
 
     public BookNotBorrowedException(String message){
         super(message);

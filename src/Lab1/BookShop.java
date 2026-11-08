@@ -21,7 +21,7 @@ public class BookShop {
 
         System.out.println("С вас " + price + "$");
 
-        if(price >= 100){
+        if(price > 100){
             System.out.println("Бонус! Вы получаете подарочный купон!");
         }
 

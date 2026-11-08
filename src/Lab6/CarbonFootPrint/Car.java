@@ -1,8 +1,13 @@
-﻿package Lab6.CarbonFootPrint;
+package Lab6.CarbonFootPrint;
 
-public class Car implements ICarbonFootprint {
+public class Car implements CarbonFootprint {
     private double fuelUsed;
     private String mark;
+
+    public Car(String mark, double fuelUsed) {
+        this.mark = mark;
+        this.fuelUsed = fuelUsed;
+    }
 
     public String getMark() {
         return mark;
@@ -12,12 +17,13 @@ public class Car implements ICarbonFootprint {
         this.mark = mark;
     }
 
-    public Car(double fuelUsed) {
-        this.fuelUsed = fuelUsed;
-    }
-
     @Override
     public double getCarbonFootprint() {
         return fuelUsed * 2.31;
+    }
+
+    @Override
+    public String toString() {
+        return "Машина (" + mark + ")";
     }
 }

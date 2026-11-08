@@ -46,4 +46,9 @@ public class User {
         this.city = city;
         this.tags = tags;
     }
+
+    @Override
+    public String toString() {
+        return name + " (" + age + ", " + city + ", " + tags + ")";
+    }
 }

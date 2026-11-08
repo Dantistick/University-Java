@@ -9,13 +9,15 @@ public class TimeConverter {
         System.out.print("Сколько времени ты проводишь за компьютером? (в минутах): ");
         int minutes = scanner.nextInt();
 
-        int hours = minutes / 60;
-        int days = hours / 24;
+        int days = minutes / (24 * 60);
+        int hours = minutes % (24 * 60) / 60;
+        int restMinutes = minutes % 60;
 
-        String daysString =  days > 0 ? days + " дней " : "";
-        String hoursString = hours > 0 ? hours + " часов" : "";
+        String daysString = days > 0 ? days + " д. " : "";
+        String hoursString = hours > 0 ? hours + " ч. " : "";
+        String minutesString = restMinutes > 0 || minutes == 0 ? restMinutes + " мин." : "";
 
-        System.out.println(minutes + " минут это " + daysString + hoursString);
+        System.out.println(minutes + " минут это " + daysString + hoursString + minutesString);
 
         if(minutes < 120)
             System.out.println("Неплохо, но можно ещё поработать");

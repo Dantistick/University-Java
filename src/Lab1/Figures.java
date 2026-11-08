@@ -44,5 +44,16 @@ public class Figures {
                 """);
 
         // Ромб
+        System.out.println("""
+                    *
+                   * *
+                  *   *
+                 *     *
+                *       *
+                 *     *
+                  *   *
+                   * *
+                    *
+                """);
     }
 }

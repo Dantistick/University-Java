@@ -1,4 +1,4 @@
-﻿package Lab5.TickTacToeGame;
+package Lab5.TickTacToeGame;
 
 public abstract class Game
 {

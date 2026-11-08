@@ -1,4 +1,4 @@
-﻿package Lab6.Exceptions.Entity;
+package Lab6.Exceptions.Entity;
 
 import Lab6.Exceptions.Exception.BookAlreadyBorrowedException;
 import Lab6.Exceptions.Exception.BookNotBorrowedException;
@@ -9,8 +9,8 @@ public class Book {
     private boolean isBorrowed;
 
     public Book(String title, String author) {
-            this.title = title;
-            this.author = author;
+        this.title = title;
+        this.author = author;
     }
 
     public String getTitle() {
@@ -21,17 +21,26 @@ public class Book {
         return author;
     }
 
-    public void borrow(){
-        if(isBorrowed)
-            throw new BookAlreadyBorrowedException("Book already borrowed");
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
+
+    public void borrow() throws BookAlreadyBorrowedException {
+        if (isBorrowed)
+            throw new BookAlreadyBorrowedException("Книга \"" + title + "\" уже выдана");
 
         isBorrowed = true;
     }
 
-    public void returnBook(){
-        if(!isBorrowed)
-            throw new BookNotBorrowedException("Book already is not borrowed");
+    public void returnBook() throws BookNotBorrowedException {
+        if (!isBorrowed)
+            throw new BookNotBorrowedException("Книга \"" + title + "\" не была выдана");
 
         isBorrowed = false;
+    }
+
+    @Override
+    public String toString() {
+        return "\"" + title + "\" (" + author + ")" + (isBorrowed ? " - выдана" : " - в наличии");
     }
 }
